@@ -19,7 +19,7 @@ class ReceiptDisplay() extends TextArea {
   def formatReceiptItem(description: String, price: Double): String = {
     val priceString: String = "$%.2f".format(price)
     val remainingSpace = this.receiptDisplayWidth - priceString.length() - 1
-    val truncatedDescription: String = description.substring(0, 4.max(remainingSpace.min(description.length())))
+    val truncatedDescription: String = description.substring(0, 0.max(remainingSpace.min(description.length())))
     val padding: String = " " * (this.receiptDisplayWidth - priceString.length - truncatedDescription.length)
     truncatedDescription + padding + priceString
   }

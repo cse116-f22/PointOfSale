@@ -4,49 +4,49 @@ import javafx.event.{ActionEvent, EventHandler}
 import store.model.checkout.SelfCheckout
 
 /**
- * EventHandlers for each of the button on the SelfCheckout. NumberAction takes
- * an Int representing the which number button was pressed. You may assume
+ * EventHandlers for each of the buttons on the SelfCheckout. NumberAction takes
+ * an Int representing the number button that was pressed. You may assume
  * that each of these classes has a reference to the same SelfCheckout object.
  */
 
-class NumberAction(SelfCheckout: SelfCheckout, number: Int) extends EventHandler[ActionEvent] {
+class NumberAction(selfCheckoutModel: SelfCheckout, number: Int) extends EventHandler[ActionEvent] {
   override def handle(event: ActionEvent): Unit = {
-    SelfCheckout.numberPressed(number)
+    selfCheckoutModel.numberPressed(number)
   }
 }
 
-class ClearAction(SelfCheckout: SelfCheckout) extends EventHandler[ActionEvent] {
+class ClearAction(selfCheckoutModel: SelfCheckout) extends EventHandler[ActionEvent] {
   override def handle(event: ActionEvent): Unit = {
-    SelfCheckout.clearPressed()
+    selfCheckoutModel.clearPressed()
   }
 }
 
-class EnterAction(SelfCheckout: SelfCheckout) extends EventHandler[ActionEvent] {
+class EnterAction(selfCheckoutModel: SelfCheckout) extends EventHandler[ActionEvent] {
   override def handle(event: ActionEvent): Unit = {
-    SelfCheckout.enterPressed()
+    selfCheckoutModel.enterPressed()
   }
 }
 
-class CheckoutAction(SelfCheckout: SelfCheckout) extends EventHandler[ActionEvent] {
+class CheckoutAction(selfCheckoutModel: SelfCheckout) extends EventHandler[ActionEvent] {
   override def handle(event: ActionEvent): Unit = {
-    SelfCheckout.checkoutPressed()
+    selfCheckoutModel.checkoutPressed()
   }
 }
 
-class CashAction(SelfCheckout: SelfCheckout) extends EventHandler[ActionEvent] {
+class CashAction(selfCheckoutModel: SelfCheckout) extends EventHandler[ActionEvent] {
   override def handle(event: ActionEvent): Unit = {
-    SelfCheckout.cashPressed()
+    selfCheckoutModel.cashPressed()
   }
 }
 
-class CreditAction(SelfCheckout: SelfCheckout) extends EventHandler[ActionEvent] {
+class CreditAction(selfCheckoutModel: SelfCheckout) extends EventHandler[ActionEvent] {
   override def handle(event: ActionEvent): Unit = {
-    SelfCheckout.creditPressed()
+    selfCheckoutModel.creditPressed()
   }
 }
 
-class LoyaltyAction(SelfCheckout: SelfCheckout) extends EventHandler[ActionEvent] {
+class LoyaltyAction(selfCheckoutModel: SelfCheckout) extends EventHandler[ActionEvent] {
   override def handle(event: ActionEvent): Unit = {
-    SelfCheckout.loyaltyCardPressed()
+    selfCheckoutModel.loyaltyCardPressed()
   }
 }

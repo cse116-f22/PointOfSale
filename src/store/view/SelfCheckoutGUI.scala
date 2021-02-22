@@ -6,8 +6,8 @@ import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
 import scalafx.scene.control.TextField
 import scalafx.scene.layout.GridPane
-import store.controller._
 import store.model.checkout.SelfCheckout
+import store.controller._
 
 object SelfCheckoutGUI extends JFXApp {
 
@@ -17,22 +17,11 @@ object SelfCheckoutGUI extends JFXApp {
   var scanField: TextField = new TextField {
     editable = false
     style = "-fx-font: 20 ariel;"
-    text.value = "12897104890234"
   }
 
   var receiptArea: ReceiptDisplay = new ReceiptDisplay()
 
   val numberFontSize: Int = 20
-
-  var checkoutButton: SelfCheckoutButton = new SelfCheckoutButton("Check Out", new CheckoutAction(checkoutModel))
-  var payCashButton: SelfCheckoutButton = new SelfCheckoutButton("Cash", new CashAction(checkoutModel))
-  var payCreditButton: SelfCheckoutButton = new SelfCheckoutButton("Credit", new CreditAction(checkoutModel))
-  var loyaltyCardButton: SelfCheckoutButton = new SelfCheckoutButton("Loyalty Card", new LoyaltyAction(checkoutModel))
-
-  var buttonZero: SelfCheckoutButton = new SelfCheckoutButton("0", new NumberAction(checkoutModel, 0), 1, 1, numberFontSize)
-
-  var clearButton: SelfCheckoutButton = new SelfCheckoutButton("Clear", new ClearAction(checkoutModel))
-  var enterButton: SelfCheckoutButton = new SelfCheckoutButton("Enter", new EnterAction(checkoutModel))
 
   var buttonOne: SelfCheckoutButton = new SelfCheckoutButton("1", new NumberAction(checkoutModel, 1), 1, 1, numberFontSize)
   var buttonTwo: SelfCheckoutButton = new SelfCheckoutButton("2", new NumberAction(checkoutModel, 2), 1, 1, numberFontSize)
@@ -46,6 +35,15 @@ object SelfCheckoutGUI extends JFXApp {
   var buttonEight: SelfCheckoutButton = new SelfCheckoutButton("8", new NumberAction(checkoutModel, 8), 1, 1, numberFontSize)
   var buttonNine: SelfCheckoutButton = new SelfCheckoutButton("9", new NumberAction(checkoutModel, 9), 1, 1, numberFontSize)
 
+  var clearButton: SelfCheckoutButton = new SelfCheckoutButton("Clear", new ClearAction(checkoutModel))
+  var buttonZero: SelfCheckoutButton = new SelfCheckoutButton("0", new NumberAction(checkoutModel, 0), 1, 1, numberFontSize)
+  var enterButton: SelfCheckoutButton = new SelfCheckoutButton("Enter", new EnterAction(checkoutModel))
+
+  var checkoutButton: SelfCheckoutButton = new SelfCheckoutButton("Check Out", new CheckoutAction(checkoutModel))
+  var payCashButton: SelfCheckoutButton = new SelfCheckoutButton("Cash", new CashAction(checkoutModel))
+  var payCreditButton: SelfCheckoutButton = new SelfCheckoutButton("Credit", new CreditAction(checkoutModel))
+  var loyaltyCardButton: SelfCheckoutButton = new SelfCheckoutButton("Loyalty Card", new LoyaltyAction(checkoutModel))
+
 
   stage = new PrimaryStage {
     title = "Self Checkout"
@@ -56,12 +54,6 @@ object SelfCheckoutGUI extends JFXApp {
           vgap = 0.0
 
           add(scanField, 0, 0, 4, 1)
-
-          add(checkoutButton, 3, 1)
-          add(payCashButton, 3, 2)
-          add(payCreditButton, 3, 3)
-          add(loyaltyCardButton, 3, 4)
-
 
           add(buttonOne, 0, 1)
           add(buttonTwo, 1, 1)
@@ -78,6 +70,13 @@ object SelfCheckoutGUI extends JFXApp {
           add(clearButton, 0, 4)
           add(buttonZero, 1, 4)
           add(enterButton, 2, 4)
+
+
+          add(checkoutButton, 3, 1)
+          add(payCashButton, 3, 2)
+          add(payCreditButton, 3, 3)
+          add(loyaltyCardButton, 3, 4)
+
 
           add(receiptArea, 4, 0, 2, 5)
         }

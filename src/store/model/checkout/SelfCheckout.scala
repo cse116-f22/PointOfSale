@@ -8,7 +8,6 @@ class SelfCheckout {
     // TODO
   }
 
-  // inputs
   def numberPressed(number: Int): Unit = {
     // TODO
   }
@@ -37,8 +36,6 @@ class SelfCheckout {
     // TODO
   }
 
-
-  // outputs
   def displayString(): String = {
     ""
     // TODO
@@ -55,10 +52,11 @@ class SelfCheckout {
     //
     // This method is called by the GUI during setup. Use this method to prepare your
     // items and call addItem to add their barcodes. Also add any sales/tax/etc to your
-    // items
+    // items.
     //
     // This method will not be called during testing and you should not call it in your tests.
-    // Each test must setup its own items to ensure compatibility in AutoLab
+    // Each test must setup its own items to ensure compatibility in AutoLab. However, you can
+    // write a similar method in your Test Suite classes.
   }
 
 }
