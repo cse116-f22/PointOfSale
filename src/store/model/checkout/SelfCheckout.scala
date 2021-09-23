@@ -5,6 +5,7 @@ import store.model.items.Item
 class SelfCheckout {
 
   def addItem(barcode: String, item: Item): Unit = {
+    // This method adds an item to your store's checkout system. It does not add an item to the customer's cart
     // TODO
   }
 
