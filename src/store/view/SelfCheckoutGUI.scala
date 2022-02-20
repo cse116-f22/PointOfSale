@@ -93,9 +93,11 @@ object SelfCheckoutGUI extends JFXApp {
 
   def updateDisplay(): Unit = {
     receiptArea.clear()
-    for(line <- checkoutModel.receiptLines()) {
-      receiptArea.addLine(line)
+    for(item <- checkoutModel.itemsInCart()) {
+      receiptArea.addItem(item)
     }
+    receiptArea.addTotals(checkoutModel.subtotal(), checkoutModel.tax(), checkoutModel.total())
+
     scanField.text.value = checkoutModel.displayString()
   }
 
